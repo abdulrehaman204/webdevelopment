@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--form -->
+    <div style="background-color:lightgray;">
+<h1>Fill The Below Form</h1>
+<form>
+  <label>username</label>
+  <input type="text" required placeholder="username">
+  <br><br>
+  <label>Gmail</label>
+  <input type="email" required placeholder="email">
+  <br><br>
+  <label>password</label>
+  <input type="password" id="password" required placeholder="password" minlength="8">
+  <br><br>
+  <label>zip code</label>
+  <input type="text" name="zip_code" pattern="[0-9]{5}" title="Five digit zip code">
+  <br><br>
+  <label>Date</label>
+  <input type="date">
+  <br><br>
+  <label>Gender :</label>
+  <label>male</label>
+  <input type="radio">
+  <label>female</label>
+   <input type="radio">
+  <br><br>
+  <label>age</label>
+  <input type="number" name="age" min="18" max="99">
+  <br><br>
+  <button type="submit" name="action" value="save" formaction="/save-data">Save</button>
+<button type="button" onclick="alert('Hello!')">Click Me</button>
+<button type="reset">Reset Form</button>
+<button type="submit" disabled="action">Disabled Button</button>
+</form>
+<hr>
+<h2>Table Data</h2>
+<table border="3" style="width:50%" style="height:80%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <th>Abdul</th>
+    <td>Rehaman</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <th>Ravi</th>
+    <td>Kishore</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <th>Prathap</th>
+    <td>Kumar</td>
+    <td>80</td>
+  </tr>
+</table>
+<hr>
+<h2>Dolphin image</h2>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.welQXRWR3ELwlvxzawFnfgHaEo?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+    width="50%" height="400px" alt="This is a peacock image">
+    <br>
+</div>
+
+    
+</body>
+</html>

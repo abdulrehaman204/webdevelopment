@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+table{
+  border-spacing: 30px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<!-- <cell padding> -->
+  <!-- <cell spacing> -->
+
+<h2>Cell Padding and Cell Spacing</h2>
+
+<table style="width:50%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+  
+</table>
+
+<p><strong>Tip:</strong> Try to change the padding to 5px.</p>
+<br>
+<hr>
+<h2> ordered list </h2>
+<!-- < ordered list Attributes = type ,reversed ,start  -->
+<ol type="1" start="5" reversed>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+  <li>Badam</li>
+  <li>Horlicks
+    <ol>
+      <li>black tea</li>
+      <li>green tea</li>
+    </ol>
+    </li>
+  <li>Boost</li>
+</ol>  
+<br>
+<h2> unordered List</h2>
+<!-- An unordered List -->
+<p>Lists can be nested (list inside list):</p>
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+<br>
+<hr>
+<h2> Form </h2>
+<!-- < Button tag attributes > -->
+ <!--form validation-->
+<form>
+  <label>username</label>
+  <input type="text" required placeholder="username">
+  <br><br>
+  <label>Gmail</label>
+  <input type="email" required placeholder="email">
+  <br><br>
+  <label>password</label>
+  <input type="password" id="password" required placeholder="password" minlength="8">
+  <br><br>
+  <label>zip code</label>
+  <input type="text" name="zip_code" pattern="[0-9]{5}" title="Five digit zip code">
+  <br><br>
+  <label>Date</label>
+  <input type="date">
+  <br><br>
+  <label>Gender :</label>
+  <label>male</label>
+  <input type="radio">
+  <label>female</label>
+   <input type="radio">
+  <br><br>
+  <label>age</label>
+  <input type="number" name="age" min="18" max="99">
+  <br><br>
+  <button type="submit" name="action" value="save" formaction="/save-data">Save</button>
+<button type="button" onclick="alert('Hello!')">Click Me</button>
+<button type="reset">Reset Form</button>
+<button type="submit" disabled="action">Disabled Button</button>
+
+</form>
+<br>
+<hr>
+<h2>Audio Tag</h2>
+<audio controls>
+  <source src="./deep-abstract-ambient_snowcap-401656.mp3">
+</audio>
+</body>
+</html>
+
+

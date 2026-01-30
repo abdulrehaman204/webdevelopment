@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+ #box1{
+    box-sizing: border-box;
+    background-color: blueviolet;
+    min-width: 60px;
+    min-height: 40px;
+    border: 4px solid black;
+    padding: 10px;
+    margin: 10px;
+ }
+ #box2{
+    box-sizing: content-box;
+    background-color: yellow;
+    min-width: 60px;
+    min-height: 40px;
+    border: 4px solid black;
+ }
+ body{
+    background-color: gainsboro;
+ }
+ div{
+    display: flex;
+    background-color: violet;
+    justify-content: flex-end;
+ }
+ #two{
+    display: flex;
+    background-color: violet;
+    justify-content: flex-start;
+    align-items: center;
+ }
+ .a{
+    background-color: blue;
+    width: 100px;
+    padding: 20px;
+    border: 4px solid black;
+    margin: 50px;
+    text-align: center;
+ }
+ .box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid blue;
+  margin: 30px;
+  text-align: center;
+  
+}
+hello{
+    margin-top: 20px;
+    color: blueviolet;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+    <p id="one" style="color: blue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, iste!</p>
+    <p style="background-color: goldenrod; border: 4px solid black; width: 70%; margin: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, unde.</p>
+    </div>
+<p class="hello" style="background-color: goldenrod;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, unde.</p>
+<h1 id="box1">border-box</h1>
+<h1 id="box2">content-box</h1>
+<div id="two">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, fuga?</p>
+</div>
+<div class="box">Hello</div>
+
+<div class="a">
+<button style="color:red;">hello</button>
+</div>
+</body>
+</html

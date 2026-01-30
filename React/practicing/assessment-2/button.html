@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Counter</title>
+</head>
+<body>
+    <h2>Button Click Counter</h2>
+    <button id="clickBtn">Click Me</button>
+    <p id="result">Button clicked 0 times</p>
+
+    <script>
+        function clickCounter() {
+            let count = 0;  
+            return function () {
+                count++;
+                document.getElementById("result").textContent =
+                    "Button clicked " + count + " times";
+            };
+        }
+
+        const counter = clickCounter();
+
+        document.getElementById("clickBtn").addEventListener("click", counter);
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+}
+.header {
+  grid-area: header;
+  background-color:gray;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  border: 3px solid black;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left left middle middle right right' 
+    'footer footer footer footer footer footer';
+  grid-column-gap: 10px;
+} 
+.left,
+.middle,
+.right {
+  padding: 10px;
+  height: 300px;
+  border: 2px solid black;
+}
+.left {
+  grid-area:left;
+}
+.middle {
+  grid-area: middle;
+}
+.right {
+  grid-area: right;
+}
+.footer {
+  grid-area: footer;
+  background-color: gray;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  border: 2px solid black;
+}
+</style>
+</head>
+<body>
+<div class="grid-container">
+  <div class="header">
+    <h2>Header</h2>
+  </div>
+  
+  <div class="left" style="background-color:#aaa;">Column</div>
+  <div class="middle" style="background-color:#bbb;">Column</div>  
+  <div class="right" style="background-color:#ccc;">Column</div>
+  
+  <div class="footer">
+  <p>Footer</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+
