@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial,  sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #f4f4f4;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+        }
+        .logo{
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .navlinks{
+            list-style: none;
+            display: flex;
+        }
+        .navlinks li{
+            position: relative;
+        }
+        .navlinks li a {
+           color: white;
+           text-decoration: none;
+           padding: 10px 15px;
+           display: block;
+        }
+        .navlinks li a:hover{
+            background: #555;
+            border-radius: 4px;
+        }
+        .dropdown-menu{
+            display: none;
+            position: absolute;
+            top: 40px;
+            background: #444;
+            left: 0;
+            list-style: none;
+            min-width: 150px;
+        }
+        .dropdown-menu li a {
+            padding: 10px;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+       .hamburger {
+         display: none;
+         font-size: 26px;
+         cursor: pointer;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    flex-direction: column;
+    display: none;
+  }
+
+  .navlinks.active {
+    display: flex;
+  }
+
+  .navlinks li {
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    position: static;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+   <div class="logo">Logo</div>
+   <ul class="navlinks" id="navlinks">
+   <li><a href="#">Home</a></li>
+   <li class="dropdown">
+    <a href="#">Services ▾</a>
+   </li>
+   <ul class="dropdown-menu">
+    <li><a href="#">Web Design</a></li>
+    <li><a href="#">Development</a></li>
+    <li><a href="#">SEO</a></li>
+   </ul>
+   <li><a href="#">Portfolio</a></li>
+   <li><a href="#">Contact</a></li>
+   </ul>
+
+     <div class="hamburger" id="hamburger">
+    ☰
+  </div>
+
+    </nav>
+</body>
+</html>

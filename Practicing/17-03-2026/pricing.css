@@ -1,0 +1,70 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    text-align:center;
+}
+
+.pricing{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:50px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    width:250px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:28px;
+    color:#333;
+    margin:15px 0;
+}
+
+.features{
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+}
+
+.features li{
+    padding:5px 0;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#007bff;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+/* Highlight Standard Plan */
+
+.standard{
+    border:3px solid #007bff;
+    transform:scale(1.05);
+}
+
+.standard h2{
+    color:#007bff;
+}

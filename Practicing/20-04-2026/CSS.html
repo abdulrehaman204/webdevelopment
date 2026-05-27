@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* Universal selector */
+        * {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Element selectors */
+        h1 {
+            color: blue; /* Will be overridden by ID */
+            text-align: center;
+            margin: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+            width: 60%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* Group selector */
+        h1, h2 {
+            text-decoration: underline;
+        }
+
+        /* Class selector */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: blue;
+        }
+
+        /* Descendant selector */
+        ul li {
+            color: darkblue;
+            margin: 5px;
+        }
+
+        /* ID selector (highest priority) */
+        #main-title {
+            color: red; /* Overrides element selector */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Inline CSS (highest immediate priority) -->
+    <h1 id="main-title">Student Profile</h1>
+
+    <p style="color: purple;">
+        Hello! I am a student learning web development.
+    </p>
+
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li class="highlight">CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2>Marks Table</h2>
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>Math</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td>90</td>
+        </tr>
+    </table>
+
+    <button class="btn">Contact Me</button>
+
+</body>
+</html>

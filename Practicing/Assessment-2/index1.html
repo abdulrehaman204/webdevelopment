@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background: whitesmoke;
+        }
+        .main{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: grey;
+        }
+        .menu{
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: flex-end;
+            text-decoration: none;
+        }
+        @media (maxwidth<786px) {
+            .menu :hover{
+                background-color: aqua;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Logo</h1>
+        <div class="menu">
+            <h1>Home</h1>
+            <h1>Products</h1>
+            <h1>Services
+                <select>
+                    <option>Select your services</option>
+                    <option>Webdevelopment</option>
+                    <option>Medical codes</option>
+                    <option>Hr recruteirs</option>
+                </select>
+            </h1>
+            <h1>About</h1>
+            <h1>Contact</h1>
+        </div>
+    </div>
+</body>
+</html>

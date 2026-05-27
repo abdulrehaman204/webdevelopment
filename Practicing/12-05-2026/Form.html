@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Contact Form</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .error {
+      color: #d93025;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .invalid {
+      border-color: #d93025 !important;
+      background-color: #fff3f3;
+    }
+
+    .success-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+    <h2>Contact / Registration Form</h2>
+
+    <div class="success-message" id="successMessage">
+      Form submitted successfully!
+    </div>
+
+    <form id="contactForm" novalidate>
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" />
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" />
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" />
+        <div class="error" id="phoneError"></div>
+      </div>
+
+      <!-- Subject -->
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <select id="subject">
+          <option value="">Select Subject</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Support</option>
+          <option value="feedback">Feedback</option>
+          <option value="registration">Registration</option>
+        </select>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message"></textarea> 
+        
+        <div class="error" id="messageError"></div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const message = document.getElementById("message");
+
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+
+      // Clear previous errors
+      clearErrors();
+
+      // Name Validation
+      if (fullName.value.trim() === "") {
+        showError(fullName, "nameError", "Full name is required");
+        isValid = false;
+      }
+
+      // Email Validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email.value.trim())) {
+        showError(email, "emailError", "Enter a valid email address");
+        isValid = false;
+      }
+
+      // Phone Validation
+      const phonePattern = /^[0-9]{10}$/;
+      if (!phonePattern.test(phone.value.trim())) {
+        showError(
+          phone,
+          "phoneError",
+          "Phone number must be numeric and 10 digits"
+        );
+        isValid = false;
+      }
+
+      // Message Validation
+      if (message.value.trim().length < 10) {
+        showError(
+          message,
+          "messageError",
+          "Message must be at least 10 characters"
+        );
+        isValid = false;
+      }
+
+      // Success
+      if (isValid) {
+        successMessage.style.display = "block";
+        form.reset();
+
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 4000);
+      }
+    });
+
+    function showError(input, errorId, message) {
+      input.classList.add("invalid");
+      document.getElementById(errorId).textContent = message;
+    }
+
+    function clearErrors() {
+      const inputs = [fullName, email, phone, message];
+
+      inputs.forEach((input) => {
+        input.classList.remove("invalid");
+      });
+
+      document.querySelectorAll(".error").forEach((error) => {
+        error.textContent = "";
+      });
+    }
+  </script>
+
+</body>
+</html>

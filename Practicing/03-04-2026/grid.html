@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.grid {
+  display: grid;
+  gap: 10px;
+  height: 100vh;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-template-areas:
+    "left top top top-right"
+    "left mid1 mid2 right"
+    "left bottom1 bottom2 right";
+}
+
+.left { 
+  grid-area: left; 
+  background: #6ab04c;
+}
+
+.top { 
+  grid-area: top; 
+  background: #6ab04c;
+}
+
+.top-right { 
+  grid-area: top-right; 
+  background: #eb2f06;
+}
+
+.mid1 { 
+  grid-area: mid1; 
+  background: #f6b93b;
+}
+
+.mid2 { 
+  grid-area: mid2; 
+  background: #eb2f06;
+}
+
+.bottom1 { 
+  grid-area: bottom1; 
+  background: #eb2f06;
+}
+
+.bottom2 { 
+  grid-area: bottom2; 
+  background: #f6b93b;
+}
+
+.right { 
+  grid-area: right; 
+  background: #6ab04c;
+}
+
+.grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left top"
+      "left top-right"
+      "mid1 mid2"
+      "bottom1 bottom2"
+      "right right";
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "top"
+      "top-right"
+      "mid1"
+      "mid2"
+      "bottom1"
+      "bottom2"
+      "right";
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+  <div class="left">Left</div>
+
+  <div class="top">Top Center</div>
+  <div class="top-right">Top Right</div>
+
+  <div class="mid1">Mid 1</div>
+  <div class="mid2">Mid 2</div>
+
+  <div class="bottom1">Bottom 1</div>
+  <div class="bottom2">Bottom 2</div>
+
+  <div class="right">Right</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+       *{
+         border-radius: 0%;
+        }
+        p{
+            text-align: center;
+            color: red;
+        }
+        p::after{
+            content: " CSS";
+            color: green;
+        }
+        button{
+            background-color:brown;
+            color: white;
+            padding: 10px;
+            display: block;
+            margin: auto;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        #selectors{
+            border: solid black;
+            margin: 50px;
+            background-color:aquamarine;
+        }
+        .CSS{
+            text-align: center;
+        }
+        ul li{
+            color: orangered;
+            text-decoration:solid;
+            text-align:justify;
+        }
+        .priority{
+            border: solid black;
+            background-color: lightcoral;
+            text-align: center;
+            margin: 50px;
+        }
+        #p1{
+            color:yellow;
+        }
+        .pp{
+            border: solid black;
+            margin: 50px;
+            text-align: center;
+            background-color:antiquewhite;
+        }
+        h2, ol{
+            border:black;
+            color: blue;
+        }
+        ol{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: solid black; margin: 50px; padding: 50px; background-color:aliceblue; ">
+    <h1 style="background-color: aquamarine; width: 1000px; color: brown; text-align: center;">This is CSS types</h1>
+    <p>Inline</p>
+    <p>Internal</p>
+    <P>External</P>
+    <button>Click Me</button>
+    </div>
+    <section id="selectors">
+      <h1 class="CSS">CSS Selectors</h1>
+      <ul>
+        <li>Tag Name</li>
+        <li>Id Name</li>
+        <li>Class Name</li>
+        <li>Universal selectors</li>
+        <li>Combinator selectors</li>
+        <li>group selectors</li>
+      </ul>
+    </section>
+     <div class="priority">
+        <h1>Priorities of CSS types</h1>
+        <P id="p1">Inline</P>
+        <P id="p1">Internal</P>
+        <P id="p1">External</P>
+     </div>
+    <div class="pp">
+        <h2>Priorities of CSS selectors</h2>
+      <ol>
+        <li>Id Name</li>
+        <li>Class Name</li>
+        <li>Tag Name</li>
+      </ol>
+    </div>
+</body>
+</html>

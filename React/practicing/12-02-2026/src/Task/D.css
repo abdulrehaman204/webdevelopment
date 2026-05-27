@@ -1,0 +1,79 @@
+/* Background */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 600px;
+}
+
+/* Heading */
+h1, h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input:focus {
+  border-color: #4e73df;
+  box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Role colors */
+.employee { background-color: #36b9cc; }
+.hr { background-color: #f6c23e; }
+.admin { background-color: #e74a3b; }
+.manager { background-color: #858796; }
+
+/* Login / Logout */
+.login { background-color: #4e73df; }
+.logout { background-color: #e74a3b; }
+.back { background-color: #858796; }
+
+/* Hover effect */
+.btn:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* Welcome text */
+.welcome {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #1cc88a;
+  font-weight: bold;
+}

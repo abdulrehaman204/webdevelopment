@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            border: solid black;
+            width: 700px;
+        }
+        table{
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th{
+            background-color: lightblue;
+        }
+        img {
+            margin: 10px;
+            border: 2px solid black;
+        }
+        section {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+     <!-- <-------------------------form creation----------------------------------> 
+    <div id="form">
+    <u><h2>Student Registration Form</h2></u> 
+    <form>
+        <!-- Full Name -->
+        <label>Full Name:</label>
+        <input type="text" name="fullname" placeholder="Enter your name" required><br><br>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email" required><br><br>
+
+        <!-- Password -->
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter password" required><br><br>
+
+        <!-- Age -->
+        <label>Age:</label>
+        <input type="number" name="age" min="1" required><br><br>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male" required> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <br><br>
+
+        <!-- Course Dropdown -->
+        <label>Course:</label>
+        <select name="course" required>
+            <option value="">--Select Course--</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">BSc</option>
+            <option value="bcom">BCom</option>
+        </select>
+        <br><br>
+
+        <!-- Skills -->
+        <label>Skills:</label>
+        <input type="checkbox" name="skills" value="html"> HTML
+        <input type="checkbox" name="skills" value="css"> CSS
+        <input type="checkbox" name="skills" value="js"> JavaScript
+        <br><br>
+
+        <!-- Address -->
+        <label>Address:</label>
+        <textarea name="address" rows="4" cols="30" placeholder="Enter your address"></textarea>
+        <br><br>
+
+        <!-- Buttons -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        <br><br>
+    </form>
+    </div>
+    <hr>
+
+<!-- <-----------------------------table creation------------------------------------>
+
+    <div id="table">
+        <h2><mark>Students Marks Table</mark></h2>
+        <table>
+            <caption><b>Student Report</b></caption>
+            <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+               <td rowspan="2">Abdul</td>
+               <td rowspan="2">01</td>
+               <td>Maths</td>
+               <td>96</td>
+               <td>A+</td>
+            </tr>
+              <tr>
+               <td>Science</td>
+               <td>84</td>
+               <td>B+</td>
+            </tr>
+              <tr>
+               <td rowspan="2">Ravi</td>
+               <td rowspan="2">03</td>
+               <td>Maths</td>
+               <td>50</td>
+               <td>C</td>
+            </tr>
+              <tr>
+               <td>Science</td>
+               <td>40</td>
+               <td>D</td>
+            </tr>
+              <tr>
+               <td rowspan="2">Prasanth</td>
+               <td rowspan="2">04</td>
+               <td>Maths</td>
+               <td>80</td>
+               <td>B</td>
+            </tr>
+              <tr>
+               <td>Science</td>
+               <td>40</td>
+               <td>D</td>
+            </tr>
+            <tr>
+                <td colspan="3"><b>Total students</b></td>
+                <td colspan="2">3</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+
+    <!-- <-----------------------Lists---------------------------------------------> 
+
+ <div>
+    <h2>My Daily Routine</h2>
+    <ol type="I">
+        <li>Wakeup</li>
+        <li>Morning Routine
+            <ul>
+                <li>Brush teeth</li>
+                <li>Take a bath</li>
+                <li>Break fast</li>
+            </ul>
+        </li>
+        <li>Login</li>
+        <li>Practice</li>
+        <li>Relax</li>
+        <li>Sleep</li>
+    </ol>
+
+     <h2>Favorite Foods</h2>
+
+      <ul type="square">
+        <li>Pizza</li>
+        <li>Biryani</li>
+        <li>Burger</li>
+        <li>Ice Cream</li>
+    </ul>
+
+     <h2>Hobbies</h2>
+
+       <!-- Description List -->
+    <dl>
+        <dt>Reading</dt>
+        <dd>I enjoy reading books to gain knowledge.</dd>
+
+        <dt>Gaming</dt>
+        <dd>I like playing video games in my free time.</dd>
+
+        <dt>Traveling</dt>
+        <dd>I love exploring new places and cultures.</dd>
+    </dl>
+ </div>
+<hr>
+  <h1><u>My Media Page</u></h1>
+
+    <!-- Images Section -->
+    <section>
+        <h2>Images</h2>
+        <figure>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.QLwTX7FkHjxsX4iwyw88XAHaHZ?pid=ImgDet&w=175&h=175&c=7&dpr=1.1&o=7&rm=3"  alt="Sample Image 1" width="200" height="150">
+            <figcaption>First Image</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://png.pngtree.com/png-clipart/20230508/original/pngtree-tiger-walking-wildlife-scene-transparent-background-png-image_9153495.png" alt="Sample Image 2" width="200" height="150">
+            <figcaption>Second Image</figcaption>
+        </figure>
+    </section>
+
+      <!-- Audio Section -->
+    <section>
+        <h2>Audio</h2>
+        <audio src="./deep-abstract-ambient_snowcap-401656.mp3" controls loop type="audio/mp3"></audio>
+    </section>
+
+    <!-- Video section -->
+     <section>
+        <h2>Video</h2>
+        <video src="./movie.mp4" controls autoplay muted  type="video/mp4"></video>
+     </section>
+     <hr>
+
+     <section>
+        <h2><u>My iframes</u></h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iAtoZar5W58?si=bYYmubQrZa_42bMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     </section>
+     
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer App</title>
+</head>
+<body>
+
+<h1 id="display">00:00</h1>
+
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+
+<script>
+let seconds = 0;
+let interval = null;
+
+// Format mm:ss
+function formatTime(sec) {
+    const mins = Math.floor(sec / 60);
+    const secs = sec % 60;
+    return String(mins).padStart(2, '0') + ":" + String(secs).padStart(2, '0');
+}
+
+// Update display
+function updateDisplay() {
+    document.getElementById("display").textContent = formatTime(seconds);
+}
+
+// Start / Resume
+function startTimer() {
+    if (interval) return; // prevent multiple intervals
+
+    interval = setInterval(() => {
+        seconds++;
+        updateDisplay();
+    }, 1000);
+}
+
+// Pause
+function pauseTimer() {
+    clearInterval(interval);
+    interval = null;
+}
+
+// Reset
+function resetTimer() {
+    clearInterval(interval);
+    interval = null;
+    seconds = 0;
+    updateDisplay();
+}
+</script>
+
+</body>
+</html>

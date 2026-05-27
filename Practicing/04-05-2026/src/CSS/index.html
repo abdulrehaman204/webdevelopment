@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: whitesmoke;
+            padding: 10px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .main{
+           display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 15px;
+        }
+    .main img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+     .main img:hover {
+      transform: scale(1.1);
+    }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+   <div class="main">
+    <img src="https://picsum.photos/300?1" alt="img1">
+  <img src="https://picsum.photos/300?2" alt="img2">
+  <img src="https://picsum.photos/300?3" alt="img3">
+  <img src="https://picsum.photos/300?4" alt="img4">
+  <img src="https://picsum.photos/300?5" alt="img5">
+  <img src="https://picsum.photos/300?6" alt="img6">
+  <img src="https://picsum.photos/300?7" alt="img7">
+  <img src="https://picsum.photos/300?8" alt="img8">
+  <img src="https://picsum.photos/300?9" alt="img9">
+  <img src="https://picsum.photos/300?10" alt="img10">
+  <img src="https://picsum.photos/300?11" alt="img11">
+  <img src="https://picsum.photos/300?12" alt="img12">
+</div>
+</body>
+</html>

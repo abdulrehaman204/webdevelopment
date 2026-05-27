@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <label for="as">Full Name :</label>
+        <input type="text" required placeholder="Enter your name" id="as">
+        <br><br>
+        <label for="email">Email :</label> 
+        <input type="email" required placeholder="email" id="email">
+        <br> <br>
+        <label for="password">Password :</label>
+        <input type="password" id="password" required minlength="8" placeholder="enter password">
+        <br> <br>
+        <label>Gender :</label> <br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label> <br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label> <br>
+        <br>
+        <label for="country">Country :</label>
+        <select id="country" name="country" required>
+        <option value="" >select the country</option>
+        <option value="USA">USA</option>
+        <option value="USA">India</option>
+        <option value="USA">China</option>
+        <option value="USA">France</option>
+        </select> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

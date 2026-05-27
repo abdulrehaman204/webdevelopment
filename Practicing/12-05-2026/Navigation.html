@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Multi-Level Navbar</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #1f2937;
+      color: #fff;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #3b82f6;
+    }
+
+    /* Main Menu */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 6px;
+      transition: 0.3s ease;
+      font-size: 15px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    /* Dropdown */
+    .dropdown-menu,
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      list-style: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-menu li,
+    .submenu li {
+      position: relative;
+    }
+
+    .dropdown-menu a,
+    .submenu a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .dropdown-menu a:hover,
+    .submenu a:hover {
+      background: #f1f5f9;
+      color: #3b82f6;
+    }
+
+    /* Nested submenu */
+    .submenu {
+      top: 0;
+      left: 100%;
+    }
+
+    /* Desktop Hover */
+    @media (min-width: 769px) {
+      .dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .has-submenu:hover > .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #1f2937;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .nav-menu.active {
+        max-height: 1000px;
+      }
+
+      .nav-item {
+        width: 100%;
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 0;
+        justify-content: space-between;
+      }
+
+      .dropdown-menu,
+      .submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        display: none;
+        width: 100%;
+      }
+
+      .dropdown-menu.active,
+      .submenu.active {
+        display: block;
+        animation: slideDown 0.3s ease;
+      }
+
+      .dropdown-menu a,
+      .submenu a {
+        padding-left: 35px;
+      }
+
+      .submenu a {
+        padding-left: 55px;
+      }
+
+      .submenu {
+        background: #f8fafc;
+      }
+    }
+
+    /* Animation */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Demo Content */
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#" class="logo">My<span>Brand</span></a>
+
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- Menu -->
+      <ul class="nav-menu" id="navMenu">
+
+        <li class="nav-item">
+          <a href="#" class="nav-link active">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">Products</a>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="nav-item dropdown">
+
+          <a href="#" class="nav-link dropdown-toggle">
+            Services
+            <i class="fas fa-chevron-down"></i>
+          </a>
+
+          <ul class="dropdown-menu">
+
+            <li>
+              <a href="#">Web Development</a>
+            </li>
+
+            <!-- Nested Submenu -->
+            <li class="has-submenu">
+
+              <a href="#" class="submenu-toggle">
+                Design Services
+                <i class="fas fa-chevron-right"></i>
+              </a>
+
+              <ul class="submenu">
+                <li><a href="#">UI Design</a></li>
+                <li><a href="#">UX Research</a></li>
+                <li><a href="#">Brand Identity</a></li>
+              </ul>
+
+            </li>
+
+            <li>
+              <a href="#">SEO Optimization</a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- Demo Content -->
+  <section class="hero">
+    <h1>Responsive Multi-Level Navigation</h1>
+    <p>
+      Desktop uses hover dropdowns, mobile uses click-based navigation.
+    </p>
+  </section>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+
+    // Toggle Mobile Menu
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // Mobile Dropdown Toggle
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener("click", (e) => {
+
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+
+          const dropdownMenu =
+            toggle.nextElementSibling;
+
+          dropdownMenu.classList.toggle("active");
+        }
+      });
+    });
+
+    // Nested Submenu Toggle
+    const submenuToggles =
+      document.querySelectorAll(".submenu-toggle");
+
+    submenuToggles.forEach(toggle => {
+      toggle.addEventListener("click", (e) => {
+
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+
+          const submenu =
+            toggle.nextElementSibling;
+
+          submenu.classList.toggle("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
