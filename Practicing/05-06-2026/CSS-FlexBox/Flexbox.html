@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 0 40px;
+    height: 70px;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 24px 18px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    background: #333;
+}
+
+.active {
+    background: #007bff;
+}
+
+.arrow {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+/* Dropdown */
+
+.dropdown-menu,
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    list-style: none;
+    background: #333;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.submenu {
+    top: 0;
+    left: 100%;
+}
+
+.dropdown-menu li a,
+.submenu li a {
+    padding: 14px 18px;
+}
+
+/* Desktop Hover */
+
+@media (min-width: 769px) {
+
+    .dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-submenu:hover > .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Hamburger */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+
+        background: #222;
+        flex-direction: column;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-menu.active {
+        max-height: 800px;
+    }
+
+    .nav-menu a {
+        padding: 15px 20px;
+    }
+
+    .dropdown-menu,
+    .submenu {
+        position: static;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+
+        display: none;
+        background: #2d2d2d;
+    }
+
+    .dropdown-menu.active,
+    .submenu.active {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+
+    .submenu {
+        background: #444;
+        padding-left: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MyLogo</div>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        <ul class="nav-menu">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">Products</a></li>
+           <li class="dropdown"><a href="#">Services
+            <span class="arrow">▼</span>
+           </a>
+          <ul class="dropdown-menu">
+          <li><a href="#">Webdevelopment</a></li>
+          <li class="dropdown-submenu"><a href="#">Consulting 
+            <span class="arrow">▶</span>
+          </a>
+         <ul class="submenu">
+                        <li><a href="#">Business Consulting</a></li>
+                        <li><a href="#">IT Consulting</a></li>
+                        <li><a href="#">Strategy Consulting</a></li>
+                    </ul>
+        </li>
+          </ul>
+        </li>
+           <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

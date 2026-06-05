@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 2fr 2fr auto;
+            height: 100vh;
+            gap: 10px;
+            text-align: center;
+            grid-template-areas:
+            "header header header"
+            "sidebar content1 content1"
+             "sidebar content2 content3"
+             "footer footer footer";
+        }
+        .header{
+            grid-area: header;
+            background-color: aqua;
+            padding: 20px;
+        }
+        .sidebar{
+            grid-area: sidebar;
+             background-color: brown;
+            padding: 20px;
+        }
+         .content-1{
+            grid-area: content1;
+            background-color: rgb(177, 226, 43);
+            padding: 20px;
+        }
+        .content-2{
+            grid-area: content2;
+            background-color:orange;
+            padding: 20px;
+        }
+        .content-3{
+            grid-area: content3;
+            background-color:orange;
+            padding: 20px;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: aqua;
+            padding: 20px;
+        }
+        @media(max-width:768px){
+             .container{
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                "header"
+                "sidebar"
+                "content1"
+                "content2"
+                "content3"
+                "footer";
+               }
+        }
+    </style>
+</head>
+<body>
+      <div class="container">
+     <header class="header">Header</header>
+     <aside class="sidebar">Sidebar</aside>
+     <main class="content-1">Content 1</main>
+     <section class="content-2">Content 2</section>
+     <section class="content-3">Content 3</section>
+     <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>

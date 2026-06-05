@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Types and Selectors Demo</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        /* Universal Selector */
+        * {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+        }
+
+        /* Element Selector */
+        h2 {
+            color: darkblue;
+        }
+
+        /* Class Selector */
+        .box {
+            background-color: lightyellow;
+            padding: 10px;
+            border: 2px solid orange;
+        }
+
+        /* ID Selector */
+        #special {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Group Selector */
+        h3, p {
+            color: darkgreen;
+        }
+
+        /* Descendant Selector */
+        .container p {
+            background-color: lightcyan;
+        }
+
+        /* Child Selector */
+        .parent > p {
+            border: 2px dashed blue;
+        }
+
+        /* Adjacent Sibling Selector */
+        h4 + p {
+            color: purple;
+        }
+
+        /* General Sibling Selector */
+        h5 ~ p {
+            background-color: pink;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid green;
+        }
+
+        /* Hover Pseudo-class */
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* First Child Selector */
+        ul li:first-child {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* Last Child Selector */
+        ul li:last-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* nth-child Selector */
+        ul li:nth-child(2) {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="color: brown; text-align: center;">
+        Inline CSS Example
+    </h1>
+
+    <h2>Element Selector Example</h2>
+
+    <div class="box">
+        Class Selector Example (.box)
+    </div>
+
+    <p id="special">
+        ID Selector Example (#special)
+    </p>
+
+    <h3>Group Selector</h3>
+    <p>This paragraph is styled by group selector.</p>
+
+    <hr>
+
+    <div class="container">
+        <p>Descendant Selector Example</p>
+    </div>
+
+    <hr>
+
+    <div class="parent">
+        <p>Direct Child Paragraph</p>
+        <div>
+            <p>Nested Paragraph (Not Direct Child)</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>Adjacent Sibling Selector</h4>
+    <p>This paragraph comes immediately after h4.</p>
+
+    <hr>
+
+    <h5>General Sibling Selector</h5>
+    <p>Sibling Paragraph 1</p>
+    <p>Sibling Paragraph 2</p>
+
+    <hr>
+
+    <input type="text" placeholder="Attribute Selector">
+
+    <br><br>
+
+    <button>Hover Over Me</button>
+
+    <hr>
+
+    <h2>Pseudo-class Selectors</h2>
+
+    <ul>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+    </ul>
+
+</body>
+</html>
