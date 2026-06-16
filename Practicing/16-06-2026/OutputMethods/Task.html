@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Task</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #gfg {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #age {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: royalblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Information</h1>
+
+        <div id="gfg"></div>
+        <div id="age"></div>
+
+        <button id="printBtn">Print Details</button>
+    </div>
+
+    <script>
+
+        // Prompt for name
+        let name = window.prompt("Enter your name:");
+
+        // Prompt for age
+        let age = Number(window.prompt("Enter your age:"));
+
+        // Get elements
+        let nameElement = document.getElementById("gfg");
+        let ageElement = document.getElementById("age");
+
+        // Display using innerHTML
+        nameElement.innerHTML = "Welcome " + name;
+        ageElement.innerHTML = "Age: " + age;
+
+        // Change color based on age
+        if (age >= 18) {
+            ageElement.style.color = "green";
+
+            // Alert
+            window.alert("You are eligible to vote");
+        } else {
+            ageElement.style.color = "red";
+
+            // Alert
+            window.alert("You are not eligible to vote");
+        }
+
+        // Console Output
+        console.log("Student Name:", name);
+        console.log("Student Age:", age);
+
+        // Document Write Output
+        document.write("<h3 style='text-align:center;'>Thank you for visiting our website!</h3>");
+
+    let button = document.getElementById("printBtn")
+    button.addEventListener("click",function(){
+        window.print()
+    })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Student Name
+let studentName = prompt("Enter Student Name:");
+
+// Subject Marks
+let mark1 = parseFloat(prompt("Enter Subject 1 Marks:"));
+let mark2 = parseFloat(prompt("Enter Subject 2 Marks:"));
+let mark3 = parseFloat(prompt("Enter Subject 3 Marks:"));
+
+// Calculate Average
+let average = (mark1 + mark2 + mark3) / 3;
+
+// Create Student Object
+let student = {
+    name: studentName,
+    mark1: mark1,
+    mark2: mark2,
+    mark3: mark3,
+    average: average.toFixed(2)
+};
+
+// Convert Object to JSON String
+let jsonData = JSON.stringify(student);
+console.log("JSON String:");
+console.log(jsonData);
+
+// Convert JSON String back to Object
+let studentData = JSON.parse(jsonData);
+
+// Display Results
+console.log("Student Name:", studentData.name);
+console.log("Subject 1:", studentData.mark1);
+console.log("Subject 2:", studentData.mark2);
+console.log("Subject 3:", studentData.mark3);
+console.log("Average:", studentData.average);
+
+// Convert Average to String
+let avgString = studentData.average.toString();
+console.log("Average as String:", avgString);
+console.log("Type:", typeof avgString);
+    </script>
+</body>
+</html>
