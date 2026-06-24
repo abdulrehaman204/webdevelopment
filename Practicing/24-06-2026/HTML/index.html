@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Concepts Showcase</title>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Concepts Showcase</h1>
+        <p>A webpage created using only HTML.</p>
+
+        <nav>
+            <a href="#about">About</a> |
+            <a href="#table">Table</a> |
+            <a href="#form">Form</a> |
+            <a href="#media">Media</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h2>About HTML</h2>
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is used to create webpages.
+            </p>
+
+            <blockquote>
+                "HTML is the foundation of every website."
+            </blockquote>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Headings</h2>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Text Formatting</h2>
+
+            <p><b>Bold Text</b></p>
+            <p><strong>Strong Text</strong></p>
+            <p><i>Italic Text</i></p>
+            <p><em>Emphasized Text</em></p>
+            <p><u>Underlined Text</u></p>
+            <p><mark>Highlighted Text</mark></p>
+            <p><small>Small Text</small></p>
+            <p>H<sub>2</sub>O</p>
+            <p>x<sup>2</sup></p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Lists</h2>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>Learn HTML</li>
+                <li>Learn CSS</li>
+                <li>Build Projects</li>
+            </ol>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Markup Language</dd>
+
+                <dt>CSS</dt>
+                <dd>Styling Language</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Links</h2>
+
+            <a href="https://www.google.com">
+                Visit Google
+            </a>
+            <br><br>
+
+            <a href="mailto:test@example.com">
+                Send Email
+            </a>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Images</h2>
+
+            <figure>
+                <img src="https://picsum.photos/400/200"
+                     alt="Sample Image">
+
+                <figcaption>
+                    Random Sample Image
+                </figcaption>
+            </figure>
+        </section>
+
+        <hr>
+
+        <section id="table">
+            <h2>Table Example</h2>
+
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+
+                <tr>
+                    <td>John</td>
+                    <td>25</td>
+                    <td>New York</td>
+                </tr>
+
+                <tr>
+                    <td>Alice</td>
+                    <td>22</td>
+                    <td>London</td>
+                </tr>
+
+                <tr>
+                    <td>Bob</td>
+                    <td>30</td>
+                    <td>Tokyo</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Progress & Meter</h2>
+
+            <p>Course Completion:</p>
+            <progress value="70" max="100"></progress>
+
+            <p>Battery Level:</p>
+            <meter value="0.8">80%</meter>
+        </section>
+
+        <hr>
+
+        <section id="form">
+            <h2>HTML Form</h2>
+
+            <form>
+
+                <label>Name:</label><br>
+                <input type="text"><br><br>
+
+                <label>Email:</label><br>
+                <input type="email"><br><br>
+
+                <label>Password:</label><br>
+                <input type="password"><br><br>
+
+                <label>Gender:</label><br>
+
+                <input type="radio" name="gender">
+                Male
+
+                <input type="radio" name="gender">
+                Female
+
+                <br><br>
+
+                <label>Skills:</label><br>
+
+                <input type="checkbox">
+                HTML
+
+                <input type="checkbox">
+                CSS
+
+                <input type="checkbox">
+                JavaScript
+
+                <br><br>
+
+                <label>Country:</label><br>
+
+                <select>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+
+                <br><br>
+
+                <label>Message:</label><br>
+
+                <textarea rows="4" cols="40"></textarea>
+
+                <br><br>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="media">
+            <h2>Media Elements</h2>
+
+            <h3>Audio</h3>
+
+            <audio controls>
+                <source src="sample.mp3" type="audio/mpeg">
+            </audio>
+
+            <h3>Video</h3>
+
+            <video width="400" controls>
+                <source src="sample.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Details and Summary</h2>
+
+            <details>
+                <summary>Click to Expand</summary>
+
+                <p>
+                    This content is hidden until expanded.
+                </p>
+            </details>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Code Example</h2>
+
+            <pre>
+&lt;h1&gt;Hello World&lt;/h1&gt;
+            </pre>
+
+            <code>
+                console.log("Hello");
+            </code>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Iframe Example</h2>
+
+            <iframe
+                src="https://www.wikipedia.org"
+                width="600"
+                height="300">
+            </iframe>
+        </section>
+
+        <hr>
+
+        <article>
+            <h2>Article</h2>
+
+            <p>
+                This is an independent article section.
+            </p>
+        </article>
+
+        <aside>
+            <h3>Aside Content</h3>
+
+            <p>
+                Additional information displayed separately.
+            </p>
+        </aside>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>
+            © 2026 HTML Concepts Showcase
+        </p>
+    </footer>
+
+</body>
+</html>

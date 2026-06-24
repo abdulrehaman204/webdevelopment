@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Styles</title>
+    <link rel="stylesheet" href="./Styles.css">
+    <style>
+        *{
+            font-family: Arial, sans-serif;
+            margin: 5px;
+        }
+        h2{
+            color: blue;
+        }
+        .box{
+            background-color: lightblue;
+            padding: 10px;
+            border: 2px solid yellow;
+        }
+        #special{
+            color: red;
+            font-weight: bold;
+        }
+        h3,p{
+            color: darkgreen;
+        }
+        .container p {
+            background-color: lightcyan;
+        }
+        .parent > p {
+            border: 2px dashed blue;
+        }
+        h4 + p {
+            color: purple;
+        }
+        h5 ~ p {
+            background-color: pink;
+        }
+        input[type="text"] {
+            border: 2px solid green;
+        }
+        button:hover{
+            background-color: greenyellow;
+            cursor: pointer;
+        }
+        ul li:first-child {
+            color: blue;
+            font-weight: bold;
+        }
+        ul li:last-child{
+            color: brown;
+            font-weight: bold;
+        }
+        ul li:nth-child(2) {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="color: brown; text-align: center;">
+        Technology Learning Hub
+    </h1>
+
+    <h2>Welcome to Web Development</h2>
+
+    <div class="box">
+        Learn HTML, CSS, and JavaScript to build modern websites.
+    </div>
+
+    <p id="special">
+        Featured Topic: CSS Selectors and Styling Techniques
+    </p>
+
+    <h3>Popular Technologies</h3>
+    <p>
+        Web technologies help create interactive and responsive applications.
+    </p>
+
+    <hr>
+
+    <div class="container">
+        <p>
+            HTML provides the structure of a webpage, while CSS controls its appearance.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="parent">
+        <p>
+            Direct Child: Frontend Development
+        </p>
+
+        <div>
+            <p>
+                Nested Child: HTML, CSS, JavaScript
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4>Latest Technology Trends</h4>
+    <p>
+        Artificial Intelligence is transforming software development.
+    </p>
+
+    <hr>
+
+    <h5>Programming Languages</h5>
+    <p>Python</p>
+    <p>Java</p>
+
+    <hr>
+
+    <input type="text" placeholder="Enter your favorite technology">
+
+    <br><br>
+
+    <button>Explore More</button>
+
+    <hr>
+
+    <h2>Top Skills for Developers</h2>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <footer>
+       <h5> @Hello Mr.Abdul Rehaman Thanks for Visit our webpage</h5>
+    </footer>
+</body>
+</html>
