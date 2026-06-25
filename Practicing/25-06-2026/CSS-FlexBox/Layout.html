@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Layout</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header{
+            background-color: #2563eb;;
+            padding: 20px;
+            color: white;
+        }
+        .main{
+            flex: 1;
+            display: flex;
+        }
+        .sidebar{
+            width: 250px;
+            background: #e5e7eb;
+            padding: 20px
+        }
+        .content{
+            flex: 1;
+            padding: 20px;
+            background: #f9fafb;
+        }
+        .footer{
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+     <header class="header"> Header </header>
+     <div class="main">
+     <aside class="sidebar">Sidebar</aside>
+     <section class="content">Main Content</section>
+     </div>
+     <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>

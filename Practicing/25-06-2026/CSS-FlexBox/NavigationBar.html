@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, sans-serif;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #1e293b;
+            color: white;
+            position: relative;
+        }
+        .logo{
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        .nav-links{
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+        /* Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 180px;
+            list-style: none;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        } 
+        .dropdown-menu li a {
+            color: #333;
+            padding: 12px 15px;
+        }
+        .dropdown-menu li a:hover {
+            background: #f1f5f9;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Hamburger */
+        .hamburger {
+           display: none;
+           font-size: 28px;
+           cursor: pointer;
+        }
+        /* mobile */
+        @media(max-width:768px){
+            .hamburger{
+                display: block;
+            }
+            .nav-links{
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1e293b;
+                padding: 15px 0;
+                gap: 0
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 15px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: #334155;
+        box-shadow: none;
+    }
+
+    .dropdown-menu li a {
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+   <div class="logo">MyLogo</div>
+   <ul class="nav-links" id="navlinks">
+    <li><a href="#">Home</a></li>
+     <li class="dropdown"><a href="#">Services ▾</a>
+     <ul class="dropdown-menu">
+        <li><a href="#">Webdevelopment</a></li>
+        <li><a href="#">Recruiter</a></li>
+        <li><a href="#">SEO</a></li>
+     </ul>
+     </li>
+      <li><a href="#">Protfolio</a></li>
+       <li><a href="#">Contact</a></li>
+   </ul>
+    <div class="hamburger" id="hamburger">☰</div>
+   </nav>
+       <script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navlinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+    </script>
+</body>
+</html>

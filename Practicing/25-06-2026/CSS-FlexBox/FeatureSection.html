@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Task</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    padding: 40px;
+}
+
+/* FLEX CONTAINER */
+.features {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* FEATURE BOX */
+.feature-box {
+    flex: 1;
+    min-width: 220px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+/* ICON */
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.feature-box h3 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.feature-box p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* HOVER EFFECT */
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-box {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+<section class="features">
+
+    <div class="feature-box">
+        <div class="icon">⚡</div>
+        <h3>Fast Performance</h3>
+        <p>Experience lightning fast loading speed and optimized performance.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon">🔒</div>
+        <h3>Secure System</h3>
+        <p>Your data is protected with high-level security standards.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon">👍</div>
+        <h3>Easy to Use</h3>
+        <p>User-friendly interface designed for smooth experience.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon">☎️</div>
+        <h3>24/7 Support</h3>
+        <p>Our support team is always available to help you anytime.</p>
+    </div>
+
+</section>
+
+</body>
+</html>
