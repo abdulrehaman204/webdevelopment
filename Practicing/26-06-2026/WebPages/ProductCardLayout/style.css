@@ -1,0 +1,22 @@
+.products{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 0 10px gray;
+    text-align: center;
+}
+img{
+    width: 100%;
+}
+button{
+    background: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
