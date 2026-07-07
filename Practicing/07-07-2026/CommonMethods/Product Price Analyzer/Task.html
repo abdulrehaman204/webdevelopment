@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Price Analyzer</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+.container{
+    width:700px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+h2{
+    text-align:center;
+}
+
+p{
+    font-size:18px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Product Price Analyzer</h2>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const prices = [1200, 500, 3500, 999, 2500, 750];
+
+// Original Prices
+const original = [...prices];
+
+// Ascending Order
+const ascending = [...prices].sort((a,b)=>a-b);
+
+// Descending Order
+const descending = [...prices].sort((a,b)=>b-a);
+
+// Highest Price
+const highest = Math.max(...prices);
+
+// Lowest Price
+const lowest = Math.min(...prices);
+
+// Prices Greater Than 1000
+const greaterThan1000 = prices.filter(price => price > 1000);
+
+// Total Price
+const total = prices.reduce((sum,price)=>sum+price,0);
+
+// Average Price
+const average = total / prices.length;
+
+// Formatted Prices
+const formatted = prices.map(price => "₹" + price.toFixed(2));
+
+// Bonus
+const secondHighest = descending[1];
+const secondLowest = ascending[1];
+
+// Display using innerHTML
+
+document.getElementById("output").innerHTML = `
+
+<p><b>Original Prices:</b> ${original.join(", ")}</p>
+
+<p><b>Ascending Order:</b> ${ascending.join(", ")}</p>
+
+<p><b>Descending Order:</b> ${descending.join(", ")}</p>
+
+<p><b>Highest Price:</b> ₹${highest}</p>
+
+<p><b>Lowest Price:</b> ₹${lowest}</p>
+
+<p><b>Prices Greater Than ₹1000:</b> ${greaterThan1000.join(", ")}</p>
+
+<p><b>Total Price:</b> ₹${total}</p>
+
+<p><b>Average Price:</b> ₹${average.toFixed(2)}</p>
+
+<p><b>Formatted Prices:</b> ${formatted.join(", ")}</p>
+
+<p><b>Second Highest Price:</b> ₹${secondHighest}</p>
+
+<p><b>Second Lowest Price:</b> ₹${secondLowest}</p>
+
+`;
+
+// Console Table
+
+console.table({
+
+Original: original.join(", "),
+
+Ascending: ascending.join(", "),
+
+Descending: descending.join(", "),
+
+Highest: highest,
+
+Lowest: lowest,
+
+Greater_Than_1000: greaterThan1000.join(", "),
+
+Total: total,
+
+Average: average.toFixed(2),
+
+Formatted: formatted.join(", "),
+
+Second_Highest: secondHighest,
+
+Second_Lowest: secondLowest
+
+});
+
+</script>
+
+</body>
+</html>

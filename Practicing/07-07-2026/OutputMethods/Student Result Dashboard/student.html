@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student dashboard</title>
+    <style>
+      body{
+         font-family: Arial;
+         background:#f4f4f4;
+        }
+    .container{
+     width:500px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    }
+    input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    font-size:16px;
+    }
+    button{
+    width:100%;
+    padding:10px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+    }
+    #result{
+    margin-top:20px;
+    }
+    #status{
+    font-size:22px;
+    font-weight:bold;
+    color:blue;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+<h2>Student Result Dashboard</h2>
+
+<input type="text" id="name" placeholder="Student Name">
+<input type="text" id="roll" placeholder="Roll Number">
+<input type="number" id="m1" placeholder="Subject 1">
+<input type="number" id="m2" placeholder="Subject 2">
+<input type="number" id="m3" placeholder="Subject 3">
+<input type="number" id="m4" placeholder="Subject 4">
+<input type="number" id="m5" placeholder="Subject 5">
+
+<button onclick="calculateResult()">
+Generate Result
+</button>
+
+<div id="result"></div>
+<p id="status"></p>
+</div>
+<script>
+function calculateResult(){
+let name=document.getElementById("name").value;
+let roll=document.getElementById("roll").value;
+let marks=[
+Number(document.getElementById("m1").value),
+Number(document.getElementById("m2").value),
+Number(document.getElementById("m3").value),
+Number(document.getElementById("m4").value),
+Number(document.getElementById("m5").value)
+];
+
+// Alert Output Method
+alert("Welcome " + name);
+
+// Total
+let total=0;
+for(let mark of marks){
+total+=mark;
+}
+
+
+// Average
+let average=total/marks.length;
+
+// Highest
+let highest=Math.max(...marks);
+
+// Lowest
+let lowest=Math.min(...marks);
+
+// Pass or Fail
+let fail=marks.some(mark=>mark<35);
+
+// Grade
+let grade="";
+if(fail){
+grade="Fail";
+}
+else if(average>=90){
+grade="A+";
+}
+else if(average>=75){
+grade="A";
+}
+else if(average>=60){
+grade="B";
+}
+else if(average>=35){
+grade="C";
+}
+else{
+grade="Fail";
+}
+
+
+// Student Object
+const student={
+Name:name,
+Roll:roll,
+Marks:marks,
+Total:total,
+Average:average,
+Highest:highest,
+Lowest:lowest,
+Grade:grade
+};
+
+// Console Output Method
+console.log(student);
+
+
+// innerHTML Output Method
+document.getElementById("result").innerHTML=`
+
+<h3>Result Card</h3>
+
+<p><b>Name:</b> ${name}</p>
+
+<p><b>Roll Number:</b> ${roll}</p>
+
+<p><b>Marks:</b> ${marks.join(", ")}</p>
+
+<p><b>Total:</b> ${total}</p>
+
+<p><b>Average:</b> ${average.toFixed(2)}</p>
+
+<p><b>Highest Mark:</b> ${highest}</p>
+
+<p><b>Lowest Mark:</b> ${lowest}</p>
+
+<p><b>Grade:</b> ${grade}</p>
+
+`;
+
+
+// textContent Output Method
+document.getElementById("status").textContent= fail ? "FAIL" : "PASS";
+}
+
+</script>
+</body>
+</html>
