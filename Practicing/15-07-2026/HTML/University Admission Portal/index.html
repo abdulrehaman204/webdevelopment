@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Portal</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="university logo" width="100">
+        <h1>ABC University Admission Portal</h1>
+        <p>Welcome to the Online Admission Portal</p>
+     </header>
+     <hr>
+     <!-- Navigation -->
+      <nav>
+        <a href="#">Home</a> |
+       <a href="#">Admissions</a> |
+       <a href="#">Courses</a> |
+       <a href="#">Departments</a> |
+        <a href="#">Placements</a> |
+        <a href="#">Contact</a>
+      </nav>
+      <hr>
+      <!-- Main -->
+       <main>
+        <!-- Admission Notice -->
+        <section>
+      <h2>Admission Notice</h2>
+      <article>
+       <p>Admissions are open for the academic year 2026-2027.
+         Applications close on <mark>30 August 2026</mark>.</p>
+         <p>Scholarships available for eligible students.</p>
+        </article>           
+        </section>
+        <hr>
+        <!-- Course List -->
+         <section>
+            <h2>Courses Offered</h2>
+    <ul>
+        <li>B.Tech
+    <ul>
+        <li>Computer Science</li>
+        <li>Artificial Intelligence</li>
+        <li>Mechanical</li>
+        <li>Electrical</li>
+    </ul>
+    </li>
+        <li>BBA</li>
+        <li>BCA</li>
+        <li>MBA</li>
+        <li>MCA</li>
+     </ul>
+         </section>
+         <hr>
+    <!-- Admission Progress -->
+     <section>
+        <h2>Admission Progress</h2>
+       <label>Application Progress</label>
+        <progress value="70" max="100"></progress>
+       <br><br>
+     <label>Seats Filled</label>
+     <meter value="350" min="0" max="500"></meter>
+     </section>
+     <hr>
+     <!-- fee structure -->
+      <section>
+        <h2>Fee Structure</h2>
+        <table border="1" cellpadding="10">
+        <tr>
+            <th>Course</th>
+            <th>Duration</th>
+            <th>Fee</th>
+        </tr>
+        <tr>
+            <td>B.Tech</td>
+            <td>4 Years</td>
+            <td>$5000</td>
+        </tr>
+        <tr>
+          <td>BCA</td>
+          <td>3 Years</td>
+          <td>$3500</td>
+        </tr>
+        <tr>
+           <td>MBA</td>
+           <td>2 Years</td>
+           <td>$6000</td>
+        </tr>
+        <tr>
+            <td>MCA</td>
+            <td>2 Years</td>
+            <td>$4500</td>
+        </tr>
+        </table>
+      </section>
+      <hr>
+      <!-- Resitration form -->
+       <section>
+        <h2>Student Registration Form</h2>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <br>
+                <input type="text" id="name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" id="email" required>
+                <br><br>
+                <label>Phone:</label>
+                <br>
+                <input type="tel" required>
+                <br><br>
+                <label>Date of birth:</label>
+                <br>
+                <input type="date">
+                <br><br>
+                <label>Gender:</label>
+                <br>
+                <input type="radio" name="Gender">Male
+                <input type="radio"name="gender"> Female
+                <input type="radio" name="gender"> Other
+            </fieldset>
+            <br>
+            <!-- Address -->
+             <fieldset>
+                <legend>Address</legend>
+                <label>City</label>
+                <br>
+                <input list="cities">
+            <datalist id="cities">
+               <option>New York</option>
+               <option>London</option>
+               <option>Delhi</option>
+               <option>Hyderabad</option>
+               <option>Tokyo</option>
+            </datalist>
+            <br><br>
+            <label>State</label>
+            <br>
+            <input type="text">
+            <br><br>
+            <label>Country</label>
+            <br>
+            <select>
+                <option>select</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Canada</option>
+                <option>Australia</option>
+            </select>
+             </fieldset>
+             <br>
+             <!-- Course details -->
+              <fieldset>
+                <legend>Course Details</legend>
+                <label>Select Course</label>
+                <br>
+                <select>
+                    <option>B.Tech</option>
+                    <option>BCA</option>
+                    <option>BBA</option>
+                    <option>MBA</option>
+                    <option>MCA</option>
+                </select>
+                <br><br>
+                <label>Preferred Branch</label>
+                <br>
+                <select>
+                    <option>Computer Science</option>
+                    <option>Artificial Intelligence</option>
+                    <option>Mechanical</option>
+                    <option>Electrical</option>
+                </select>
+            </fieldset>
+            <br>
+            <!-- DOCUMENTS -->
+             <fieldset>
+                <legend>Upload Documents</legend>
+                <label>Profile Photo</label>
+                <br>
+                <input type="file" accept="image/*">
+                <br><br>
+                <label>Resume</label>
+                <br>
+                <input type="file" accept=".pdf,.doc,.docx">
+                <br><br>
+                <label>10th Certificate</label>
+                <br>
+                <input type="file">
+            </fieldset>
+            <br>
+            <!-- EXTRA -->
+             <fieldset>
+                <legend>Additional Information</legend>
+                <label>Languages Known</label>
+                <br>
+                <input type="checkbox"> English
+                <input type="checkbox"> Hindi
+                <input type="checkbox"> Telugu
+                <input type="checkbox"> French
+                <br><br>
+                <label>Write About Yourself</label>
+                <br>
+                <textarea rows="5" cols="50"></textarea>
+            </fieldset>
+            <br>
+            <input type="submit" value="Submit Application">
+            <input type="reset">
+</form>
+</section>
+<hr>
+<!-- video -->
+<section>
+    <h2>Campus Tour</h2>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+</section>
+<hr>
+<!-- Map -->
+ <section>
+<h2>University Location</h2>
+<iframe src="https://www.google.com/maps?q=New+York&output=embed" width="600" height="450"></iframe>
+</section>
+<hr>
+<!-- Contact -->
+ <section>
+<h2>Contact Us</h2>
+<address>
+ABC University<br>
+123 University Road<br>
+New York, USA<br><br>
+Phone : +1 234 567 8900
+<br>
+Email : admissions@abcuniversity.edu
+</address>
+</section>
+</main>
+<hr>
+
+<footer>
+<p>© 2026 ABC University</p>
+<p>All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
