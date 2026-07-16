@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive-Navbar</title>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    }
+    body{
+        background:#f4f4f4;
+    }
+    .navbar{
+        background:#333;
+        color:#fff;
+        display:flex ;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        position: relative;
+    }
+    .logo{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .navlinks{
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    .navlinks li{
+        position: relative;
+    }
+    .navlinks li a{
+        display:block;
+        padding:15px 20px;
+        color:white;
+        text-decoration:none;
+    }
+    /* Dropdown */
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#444;
+    min-width:180px;
+    list-style:none;
+}
+.dropdown-menu li a{
+    padding:12px;
+}
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:#333;
+        position:absolute;
+        top:70px;
+        left:0;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+        text-align:center;
+    }
+
+    .dropdown-menu{
+        position:static;
+        width:100%;
+        display:none;
+        background:#444;
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display:none;
+    }
+
+    .dropdown.active .dropdown-menu{
+        display:block;
+    }
+}
+    </style>
+</head>
+<body>
+ <nav class="navbar">
+    <div class="logo">MyLogo</div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <ul class="navlinks" id="navlinks">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Services ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">SEO</a></li>
+            </ul>
+        </li>
+         <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+ </nav>
+ <script src="./A.js"></script>
+</body>
+</html>
