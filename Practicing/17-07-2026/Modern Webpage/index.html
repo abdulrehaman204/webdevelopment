@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Webpage Design</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: #f4f4f4;
+            color: #333;
+        }
+        header{
+            background: #1e3a8a;
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+        }
+        nav ul li{
+            margin-left: 20px;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+        nav ul li a:hover{
+            color: yellow;
+        }
+        .hero{
+            height: 80vh;
+            background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+            url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200");
+            background-size: center;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1{
+            font-size: 50px;
+        }
+        .hero p{
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        .btn{
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: .3s;
+        }
+        .btn:hover{
+            background: #e68900;
+        }
+        .about{
+            padding: 20px;
+            text-align: center;
+        }
+        .about h2{
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        .services{
+            padding: 20px;
+        }
+        .services h2{
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1e3a8a;
+        }
+        .card-container{
+           display: grid;
+           grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+           gap: 25px;
+        }
+        .card{
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,.2);
+            transition: .3s;
+        }
+        .card:hover{
+            transform:translateY(-8px);
+        }
+        .card img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3{
+            padding: 15px;
+        }
+        .card p{
+            padding: 0 15px 20px;
+        }
+        .contact{
+            padding: 60px;
+            background: white;
+        }
+        .contact h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        form{
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea{
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+        button{
+           padding:12px;
+           border:none;
+           background:#1e3a8a;
+           color:white;
+           cursor:pointer;
+           border-radius:5px;
+           transition:.3s;
+        }
+        button:hover{
+            background:#0f2560;
+        }
+        footer{
+           background:#1e3a8a;
+           color:white;
+           text-align:center;
+           padding:20px;
+        }
+        @media(max-width: 768px){
+            header{
+                flex-direction: column;
+            }
+            nav ul{
+                margin-top:15px;
+                flex-direction:column;
+                align-items:center;
+            }
+            nav ul li{
+                margin:10px 0;
+            }
+            .hero h1{
+                font-size:35px;
+            }
+            .hero p{
+                font-size:18px;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Website</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section class="hero">
+    <div>
+    <h1>Welcome to My Website</h1>
+<p>Create Beautiful Responsive Websites using HTML & CSS</p>
+<a href="#" class="btn">Get Started</a>
+    </div>
+</section>
+
+<section class="about">
+<h2>About Us</h2>
+<p>
+We design modern, responsive, and user-friendly websites using the latest HTML and CSS techniques.
+Our goal is to create attractive and functional web pages for every device.
+</p>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+<div class="card-container">
+
+<div class="card">
+<img src="https://picsum.photos/400/300?1">
+<h3>Web Design</h3>
+<p>Creative and responsive website designs for businesses and individuals.</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?2">
+<h3>UI Design</h3>
+<p>Professional user interface design with attractive layouts and colors.</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/300?3">
+<h3>Development</h3>
+<p>Fast, responsive and modern websites built with HTML, CSS and JavaScript.</p>
+</div>
+
+</div>
+</section>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+    <form>
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+    </form>
+</section>
+
+<footer>
+<p>&copy; 2026 My Website | Designed using HTML & CSS</p>
+</footer>
+
+</body>
+</html>
