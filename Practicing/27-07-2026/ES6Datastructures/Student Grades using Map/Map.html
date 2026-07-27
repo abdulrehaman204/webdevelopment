@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        const students = new Map();
+
+students.set("John", 90);
+students.set("Alice", 85);
+students.set("Bob", 95);
+students.set("David", 70);
+students.set("Emma", 88);
+
+// Update
+students.set("David", 80);
+
+// Delete
+students.delete("Emma");
+
+console.log("Student Marks");
+
+students.forEach((marks, name) => {
+    console.log(`${name} : ${marks}`);
+});
+
+let topper = "";
+let highest = 0;
+
+for (const [name, marks] of students) {
+    if (marks > highest) {
+        highest = marks;
+        topper = name;
+    }
+}
+
+console.log(`Topper: ${topper} (${highest})`);
+
+    </script>
+</body>
+</html>

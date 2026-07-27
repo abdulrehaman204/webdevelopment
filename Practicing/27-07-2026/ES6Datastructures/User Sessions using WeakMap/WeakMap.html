@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakMap</title>
+</head>
+<body>
+    <script>
+let user1 = { name: "John" };
+let user2 = { name: "Alice" };
+let user3 = { name: "David" };
+
+const sessions = new WeakMap();
+
+sessions.set(user1, "09:00 AM");
+sessions.set(user2, "10:30 AM");
+sessions.set(user3, "11:00 AM");
+
+console.log(
+    "John Login:",
+    sessions.get(user1)
+);
+
+console.log(
+    "Alice Login:",
+    sessions.get(user2)
+);
+
+// Remove Alice
+sessions.delete(user2);
+
+console.log(
+    "Alice Session:",
+    sessions.get(user2)
+);
+    </script>
+</body>
+</html>

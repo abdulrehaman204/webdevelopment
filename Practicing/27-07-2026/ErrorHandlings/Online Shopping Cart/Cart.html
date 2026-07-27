@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Cart</title>
+</head>
+<body>
+    <script>
+        function checkout(cart) {
+
+    try {
+
+        if (!Array.isArray(cart)) {
+            throw new TypeError("Cart must be an array.");
+        }
+
+        if (cart.length === 0) {
+            throw new Error("Cart is empty.");
+        }
+
+        let total = 0;
+
+        for (const item of cart) {
+
+            if (item.price <= 0) {
+                throw new RangeError(
+                    `Invalid price for ${item.name}.`
+                );
+            }
+
+            if (item.quantity <= 0) {
+                throw new RangeError(
+                    `Invalid quantity for ${item.name}.`
+                );
+            }
+
+            total += item.price * item.quantity;
+        }
+
+        if (total > 5000) {
+            throw new Error("Transaction exceeds purchase limit.");
+        }
+
+        console.log("Grand Total: $" + total);
+
+    } catch (error) {
+        console.log(`${error.name}: ${error.message}`);
+    } finally {
+        console.log("Checkout Completed");
+    }
+}
+
+checkout([
+    {
+        name: "Laptop",
+        price: 1000,
+        quantity: 2
+    },
+    {
+        name: "Mouse",
+        price: 50,
+        quantity: 2
+    }
+]);
+
+checkout([
+    {
+        name: "TV",
+        price: 3000,
+        quantity: 2
+    }
+]);
+    </script>
+</body>
+</html>

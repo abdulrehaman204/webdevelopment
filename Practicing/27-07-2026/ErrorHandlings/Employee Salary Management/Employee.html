@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Management</title>
+</head>
+<body>
+    <script>
+        function calculateNetSalary(employee) {
+
+    try {
+
+        if (typeof employee !== "object" || employee === null) {
+            throw new TypeError("Employee must be an object.");
+        }
+
+        const { name, basicSalary, taxPercentage } = employee;
+
+        if (basicSalary <= 0) {
+            throw new RangeError("Salary must be positive.");
+        }
+
+        if (taxPercentage < 0 || taxPercentage > 50) {
+            throw new RangeError("Tax percentage must be between 0 and 50.");
+        }
+
+        const tax = basicSalary * taxPercentage / 100;
+        const netSalary = basicSalary - tax;
+
+        console.log("Employee:", name);
+        console.log("Net Salary:", netSalary);
+
+    } catch (error) {
+        console.log(`${error.name}: ${error.message}`);
+    } finally {
+        console.log("Salary Process Completed");
+    }
+}
+
+calculateNetSalary({
+    name: "John",
+    basicSalary: 60000,
+    taxPercentage: 10
+});
+
+calculateNetSalary({
+    name: "David",
+    basicSalary: -1000,
+    taxPercentage: 10
+});
+    </script>
+</body>
+</html>

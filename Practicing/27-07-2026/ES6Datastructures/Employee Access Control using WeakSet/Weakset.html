@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakSet</title>
+</head>
+<body>
+    <script>
+let emp1 = { name: "John" };
+let emp2 = { name: "Alice" };
+let emp3 = { name: "David" };
+
+const authorizedEmployees = new WeakSet();
+
+authorizedEmployees.add(emp1);
+authorizedEmployees.add(emp2);
+
+console.log(
+    "John Access:",
+    authorizedEmployees.has(emp1)
+);
+
+console.log(
+    "David Access:",
+    authorizedEmployees.has(emp3)
+);
+
+// Remove Alice
+authorizedEmployees.delete(emp2);
+
+console.log(
+    "Alice Access:",
+    authorizedEmployees.has(emp2)
+);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+        
+        const library = new Set();
+
+        library.add("JavaScript")
+        library.add("Python");
+        library.add("Java");
+        library.add("JavaScript");
+        console.log("Books in library :")
+
+        for(const book of library){
+            console.log(book)
+        }
+
+        // Check book
+        console.log("Has Python?", library.has("Python"));
+
+        // Remove book
+        library.delete("Java");
+
+        console.log("\nAfter Removing Java:");
+
+        library.forEach(book => console.log(book));
+
+        console.log("Total Books:", library.size);
+
+
+    </script>
+</body>
+</html>

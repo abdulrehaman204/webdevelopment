@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+</head>
+<body>
+    <script>
+        function calculateAverage(marks) {
+    try {
+
+        if (!Array.isArray(marks)) {
+            throw new TypeError("Input must be an array.");
+        }
+
+        if (marks.length === 0) {
+            throw new Error("Marks array cannot be empty.");
+        }
+
+        let total = 0;
+
+        for (let mark of marks) {
+
+            if (typeof mark !== "number") {
+                throw new TypeError("All marks must be numbers.");
+            }
+
+            if (mark < 0 || mark > 100) {
+                throw new RangeError("Marks must be between 0 and 100.");
+            }
+
+            total += mark;
+        }
+
+        console.log("Average =", total / marks.length);
+
+    } catch (error) {
+        console.log(`${error.name}: ${error.message}`);
+    }
+}
+
+calculateAverage([80, 90, 95]);
+calculateAverage([80, "90", 70]);
+calculateAverage([80, 120, 60]);
+calculateAverage([]);
+
+
+    </script>
+</body>
+</html>
