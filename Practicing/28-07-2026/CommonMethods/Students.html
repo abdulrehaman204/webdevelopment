@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+</head>
+<body>
+    <h2 id="result"></h2>
+    <script>
+
+    const students = [
+    {
+        name:"john",
+        marks:85,
+        subject:"javascript"
+    },
+    {
+        name:"sara",
+        marks:92,
+        subject:"react"
+    },
+    {
+        name:"alex",
+        marks:75,
+        subject:"node"
+    }
+];
+
+
+// String method
+students.forEach(student => {
+
+    student.name = student.name.toUpperCase();
+
+    student.subject =
+    student.subject.toLowerCase();
+
+});
+
+
+// Array map()
+let names = students.map(student => {
+    return student.name;
+});
+
+
+// Array filter()
+let passedStudents = students.filter(student => {
+    return student.marks > 80;
+});
+
+
+// Array find()
+let topper = students.find(student => {
+    return student.marks === 
+    Math.max(
+        ...students.map(s => s.marks)
+    );
+});
+
+
+// Array reduce()
+let totalMarks = students.reduce(
+    (sum,student)=>{
+        return sum + student.marks;
+    },0
+);
+
+
+let average =
+(totalMarks / students.length).toFixed(2);
+
+
+// Object methods
+console.log(Object.keys(students[0]));
+
+console.log(Object.values(students[0]));
+
+console.log(Object.entries(students[0]));
+
+
+// JSON conversion
+let report = JSON.stringify(students);
+
+let finalData = JSON.parse(report);
+
+
+// Date method
+let year = new Date().getFullYear();
+
+
+
+let output = `
+Year: ${year}<br>
+
+Students:
+${names.join(", ")}
+<br><br>
+
+Passed Students:
+${passedStudents.map(s=>s.name).join(", ")}
+
+<br><br>
+
+Topper:
+${topper.name}
+
+<br><br>
+
+Average Marks:
+${average}
+`;
+
+
+// console output
+console.log(output);
+
+
+// HTML output
+document.getElementById("result")
+.innerHTML = output;
+
+
+// Alert output
+alert(
+`
+Topper: ${topper.name}
+Average: ${average}
+`
+);
+    </script>
+</body>
+</html>

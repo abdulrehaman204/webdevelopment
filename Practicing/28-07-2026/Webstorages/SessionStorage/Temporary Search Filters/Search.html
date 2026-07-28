@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchFilter</title>
+</head>
+<body>
+    <script>
+        
+function saveFilters(filters) {
+
+    sessionStorage.setItem(
+        "filters",
+        JSON.stringify(filters)
+    );
+}
+
+function getFilters() {
+
+    return JSON.parse(
+        sessionStorage.getItem("filters")
+    ) || {};
+}
+
+function clearFilters() {
+
+    sessionStorage.removeItem("filters");
+}
+
+// Example
+
+saveFilters({
+    search: "Laptop",
+    category: "Electronics",
+    sort: "Price Low to High",
+    maxPrice: 50000
+});
+
+console.log(getFilters());
+
+    </script>
+</body>
+</html>

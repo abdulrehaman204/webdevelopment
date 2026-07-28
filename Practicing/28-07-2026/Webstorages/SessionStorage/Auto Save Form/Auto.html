@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Save Form</title>
+</head>
+<body>
+    <script>
+
+function saveForm(data) {
+
+    sessionStorage.setItem(
+        "contactForm",
+        JSON.stringify(data)
+    );
+}
+
+function loadForm() {
+
+    return JSON.parse(
+        sessionStorage.getItem("contactForm")
+    ) || {};
+}
+
+function submitForm() {
+
+    console.log("Form Submitted");
+
+    // sessionStorage.removeItem("contactForm");
+}
+
+// Example
+
+saveForm({
+    name: "Abdul",
+    email: "Abdul@gmail.com",
+    message: "Hello"
+});
+
+console.log(loadForm());
+
+submitForm();
+
+    </script>
+</body>
+</html>

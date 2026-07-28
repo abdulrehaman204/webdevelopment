@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+    const employees = [
+    {name:"John", salary:5000},
+    {name:"Sara", salary:7500},
+    {name:"Mike", salary:6000},
+    {name:"Alex", salary:9000}
+];
+
+let total = 0;
+let highest = employees[0];
+
+employees.forEach(emp =>{
+    total += emp.salary
+
+    if(emp.salary > highest.salary){
+        highest = emp;
+    }
+
+})
+
+let average = total / employees.length;
+
+let output = `
+Total Salary: $${total}<br>
+Average Salary: $${average}<br>
+Highest Paid Employee: ${highest.name}
+`;
+
+// Console output
+console.log("Employee Analysis");
+console.log(output);
+
+
+// HTML output
+document.getElementById("result").innerHTML = output;
+
+
+// Document output
+document.write(`
+<h3>Salary Report</h3>
+Total: $${total}<br>
+Highest: ${highest.name}
+`);
+
+
+// Alert output
+alert(
+`Total Salary: $${total}
+Highest Employee: ${highest.name}`
+);
+
+
+    </script>
+</body>
+</html>

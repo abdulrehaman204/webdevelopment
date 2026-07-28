@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Transaction System</title>
+</head>
+<body>
+
+    <p id="result"></p>
+    <script>
+
+    let balance = 10000;
+
+
+let transactions = [
+    {
+        type:"deposit",
+        amount:3000
+    },
+    {
+        type:"withdraw",
+        amount:2500
+    },
+    {
+        type:"withdraw",
+        amount:2000
+    }
+];
+
+
+let history = "";
+
+
+transactions.forEach(transaction => {
+
+
+    if(transaction.type === "deposit"){
+
+        balance += transaction.amount;
+
+        history += 
+        `Deposited: $${transaction.amount}<br>`;
+
+    }
+
+
+    else if(transaction.type === "withdraw"){
+
+
+        if(transaction.amount <= balance){
+
+            balance -= transaction.amount;
+
+            history += 
+            `Withdrawn: $${transaction.amount}<br>`;
+
+        }
+
+        else{
+
+            history += 
+            `Failed Withdrawal: $${transaction.amount}<br>`;
+
+        }
+
+    }
+
+});
+
+
+let result = `
+Transaction History:<br>
+${history}
+<br>
+Current Balance: $${balance}
+`;
+
+
+// Console
+console.log(result);
+
+
+// Alert
+alert(
+`Current Balance: $${balance}`
+);
+
+
+// InnerHTML
+document.getElementById("result").innerHTML =
+result;
+
+
+// Document.write
+document.write(
+`
+<h2>Bank Statement</h2>
+${result}
+`
+);
+
+    </script>
+</body>
+</html>

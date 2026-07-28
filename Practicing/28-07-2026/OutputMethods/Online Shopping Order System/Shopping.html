@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+</head>
+<body>
+
+    <p id="result"></p>
+    <script>
+        const products = [
+    {
+        name:"Laptop",
+        price:800,
+        qty:1
+    },
+    {
+        name:"Mouse",
+        price:50,
+        qty:2
+    }
+];
+
+let subtotal = 0;
+
+products.forEach(product => {
+    subtotal += product.price * product.qty;
+});
+
+let discount = 0;
+
+if(subtotal>500){
+    discount= subtotal * 0.20
+}
+else if(subtotal > 200){
+
+    discount = subtotal * 0.10;
+
+}
+
+let afterDiscount = subtotal - discount;
+
+let tax = afterDiscount * 0.05;
+
+let finalAmount = afterDiscount + tax;
+
+let bill = `
+Subtotal: $${subtotal}
+Discount: $${discount}
+Tax: $${tax}
+Final Amount: $${finalAmount}
+`;
+
+
+// Console
+console.log(bill);
+
+
+// Alert
+alert(bill);
+
+
+// InnerHTML
+document.getElementById("result").innerHTML =
+`
+<h2>Invoice</h2>
+Subtotal: $${subtotal}<br>
+Discount: $${discount}<br>
+Tax: $${tax}<br>
+Final Amount: $${finalAmount}
+`;
+
+
+// Document.write
+document.write(
+`
+<h1>Order Summary</h1>
+Final Amount: $${finalAmount}
+`
+);
+
+
+    </script>
+</body>
+</html>
