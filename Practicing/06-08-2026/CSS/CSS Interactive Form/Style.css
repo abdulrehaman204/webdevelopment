@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background: #ececec;
+}
+.container{
+    width: 420px;
+    margin: 20px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+}
+h1{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.field{
+    margin-bottom: 18px;
+}
+label{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+
+}
+.required::after{
+    content:" *";
+    color:red;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+select{
+    width:100%;
+    padding:10px;
+    border:2px solid gray;
+    border-radius:5px;
+    transition:.4s;
+    outline:none;
+}
+input:hover,
+select:hover{
+    border-color:dodgerblue;
+}
+input:focus,
+select:focus{
+    border-color:green;
+    background:#f3fff3;
+}
+input:valid{
+    border-color:green;
+}
+input:invalid{
+    border-color:red;
+}
+input:required{
+    background:#fffef4;
+}
+::placeholder{
+    color:gray;
+    transition:.4s;
+}
+input:focus::placeholder{
+    color:blue;
+}
+.checkbox{
+    margin:20px 0;
+}
+.checkbox input{
+    appearance:none;
+    width:20px;
+    height:20px;
+    border:2px solid black;
+    vertical-align:middle;
+    cursor:pointer;
+    position:relative;
+}
+.checkbox input:checked{
+    background:green;
+    border-color:green;
+}
+.checkbox input:checked::after{
+    content:"✓";
+    color:white;
+    position:absolute;
+    left:3px;
+    top:-1px;
+    font-size:15px;
+}
+input[type=submit]{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2196f3;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.4s;
+}
+input[type=submit]:hover{
+
+    background:#1565c0;
+
+    transform:scale(1.05);
+
+}
+input[type=submit]:active{
+    transform:scale(.95);
+}
+input[type=password]{
+    letter-spacing:2px;
+}
+.field:first-child{
+    margin-top:15px;
+}
+.field:last-of-type{
+    margin-bottom:20px;
+}
+.field:nth-child(even){
+    background:#fafafa;
+    padding:10px;
+    border-radius:5px;
+}
+::selection{
+    background:orange;
+    color:white;
+}
+
+
